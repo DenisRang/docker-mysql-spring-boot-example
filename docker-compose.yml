@@ -8,8 +8,8 @@ services:
     ports:
       - "8086:8086"
     container_name: users-mysql
-    links:
-      - "mysql-standalone:mysql"
+    depends_on:
+      - mysql-standalone
 
   mysql-standalone:
     image: mysql:5.6
